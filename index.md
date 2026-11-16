@@ -1,9 +1,9 @@
 ---
-title: Movie Hangman
+title: Absolute Cinema
 permalink: /
 ---
 
-# Movie Hangman
+# Absolute Cinema: Movie Hangman
 
 Guess the film before the credits roll. Ten languages, every era.
 

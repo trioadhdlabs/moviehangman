@@ -1,5 +1,5 @@
 ---
-title: Movie Hangman — Privacy Policy
+title: Absolute Cinema — Privacy Policy
 permalink: /privacy-policy/
 ---
 
@@ -7,19 +7,19 @@ permalink: /privacy-policy/
 
 _Last updated 16 November 2026._
 
-Movie Hangman has no servers, no accounts and no analytics. It never connects
+Absolute Cinema has no servers, no accounts and no analytics. It never connects
 to the internet: every film is already inside the app.
 
-## What Movie Hangman stores
+## What Absolute Cinema stores
 
 Your scores, streaks, the films you've already played (so they don't repeat),
 and your settings. They stay on your device, in the app's own storage.
 
-## What Movie Hangman collects
+## What Absolute Cinema collects
 
 Nothing. There is no tracking, no advertising identifier, no ads, no crash
-reporting SDK, and no third-party code that could collect anything. Movie
-Hangman does not use your data to track you across apps or websites owned by
+reporting SDK, and no third-party code that could collect anything. Absolute
+Cinema does not use your data to track you across apps or websites owned by
 other companies.
 
 If a future version ever adds ads or purchases, this policy will be updated
@@ -33,7 +33,7 @@ films. Deleting the app removes everything.
 
 ## Children
 
-Movie Hangman is safe for all ages. It collects nothing from anyone, children
+Absolute Cinema is safe for all ages. It collects nothing from anyone, children
 included.
 
 ## Contact

@@ -1,9 +1,9 @@
 ---
-title: Movie Hangman — Support
+title: Absolute Cinema — Support
 permalink: /support/
 ---
 
-# Movie Hangman Support
+# Absolute Cinema Support
 
 ## Contact
 
@@ -35,7 +35,7 @@ era starts over, and the game tells you.
 
 **Why are most films recent?**
 On purpose: 96% of films come from 1990 onwards, 3.5% from 1950–1989 and 0.5%
-from before 1950. Settings → Eras lets you switch any era off.
+from before 1950 (0.02% in languages with fewer than 100 films from then). Settings → Eras lets you switch any era off.
 
 **What does difficulty change?**
 Easy plays only the best-known quarter of each era, Normal the best-known 60%,
