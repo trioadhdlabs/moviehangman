@@ -8,7 +8,7 @@ permalink: /
 Guess the film before the credits roll. Ten languages, every era.
 
 <a href="https://apps.apple.com/app/id6835567798">
-  <img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" height="54">
+  <img src="app-store-badge.svg" alt="Download on the App Store" height="54" width="161">
 </a>
 
 - [Support](support/)
