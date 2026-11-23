@@ -10,6 +10,7 @@ $muted: #b8ad9c;
 $gold: #f2c14e;
 $card: rgba(255, 244, 220, 0.05);
 $line: rgba(242, 193, 78, 0.22);
+$display: "Bebas Neue", Impact, sans-serif;
 
 html { background: $bg; }
 
@@ -26,54 +27,30 @@ body {
 
 .container-lg { max-width: 760px; }
 
+// ---------- Shared text styles ----------
 .markdown-body {
   color: $ink;
   font-family: inherit;
   font-size: 17px;
   line-height: 1.65;
 
-  // Readable card for Support / Privacy pages.
-  background: $card;
-  border: 1px solid $line;
-  border-radius: 20px;
-  padding: 32px 28px !important;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-
   h1, h2, h3 {
     color: $ink;
-    border-bottom-color: $line;
-    font-family: "Bebas Neue", Impact, sans-serif;
+    border-bottom: 0;
+    font-family: $display;
     font-weight: 400;
     letter-spacing: 0.04em;
   }
-  h1 { font-size: 2.6em; }
-  h2 { font-size: 1.8em; color: $gold; }
-
   a { color: $gold; }
   a:hover { color: lighten($gold, 12%); }
   strong { color: #fff; }
   p, li { color: $ink; }
+  em { color: $muted; }
   hr { background-color: $line; }
   code { background: rgba(255, 255, 255, 0.08); color: $ink; }
-
-  // Site name shown at the top of sub pages: a small centered brand link.
-  > h1:not([id]) {
-    text-align: center;
-    border: 0;
-    margin-bottom: 8px;
-    font-size: 1.6em;
-    a { color: $gold; text-decoration: none; }
-  }
 }
 
-// Home page: no card, everything centered.
-body:has(.hero) .markdown-body {
-  background: none;
-  border: 0;
-  box-shadow: none;
-  padding: 0 !important;
-}
-
+// ---------- Home ----------
 .hero {
   text-align: center;
   padding: 24px 0 8px;
@@ -87,7 +64,6 @@ body:has(.hero) .markdown-body {
   }
   h1 {
     margin: 28px 0 0;
-    border: 0;
     padding: 0;
     font-size: 4em;
     line-height: 1;
@@ -133,7 +109,6 @@ body:has(.hero) .markdown-body {
   }
   h3 {
     margin: 0 0 6px;
-    border: 0;
     color: $gold;
     font-size: 1.5em;
   }
@@ -147,8 +122,129 @@ body:has(.hero) .markdown-body {
   a { margin: 0 10px; }
 }
 
+// ---------- Support / Privacy ----------
+.topbar {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $ink;
+    text-decoration: none;
+    font-family: $display;
+    font-size: 1.6em;
+    letter-spacing: 0.05em;
+    img { border-radius: 8px; box-shadow: 0 0 0 1px $line; }
+  }
+  nav {
+    display: flex;
+    gap: 6px;
+    a {
+      color: $muted;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.95em;
+      border: 1px solid transparent;
+    }
+    a:hover { color: $ink; }
+    a.active { color: $gold; border-color: $line; background: $card; }
+  }
+}
+
+.subpage .markdown-body {
+  margin-top: 28px !important;
+  background: $card;
+  border: 1px solid $line;
+  border-radius: 20px;
+  padding: 40px 36px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+
+  // Page title + "Last updated" line.
+  > h1:first-child {
+    text-align: center;
+    font-size: 3.2em;
+    line-height: 1;
+    margin: 0 0 8px;
+  }
+  > h1:first-child + p {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 28px;
+  }
+
+  // Section headings with a short gold bar.
+  h2 {
+    color: $gold;
+    font-size: 1.8em;
+    margin-top: 36px;
+    padding-bottom: 0;
+    &::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      margin-top: 4px;
+      border-radius: 2px;
+      background: $gold;
+    }
+  }
+
+  // Contact callout.
+  #contact + p {
+    background: rgba(242, 193, 78, 0.1);
+    border: 1px solid $line;
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+
+  // Support Q&A: each question becomes its own card.
+  #common-questions ~ p {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    color: $muted;
+    > strong:first-child {
+      display: block;
+      margin-bottom: 4px;
+      color: $ink;
+      font-size: 1.02em;
+    }
+  }
+  // Credits section after the questions stays plain text.
+  #credits ~ p {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: $muted;
+    font-size: 0.92em;
+  }
+}
+
+.page-footer {
+  text-align: center;
+  padding: 8px 16px 40px;
+  color: $muted;
+  .badge img { background: none; }
+  p { margin: 14px 0 0; }
+  a { color: $muted; }
+  a:hover { color: $gold; }
+}
+
 @media (max-width: 480px) {
-  .markdown-body { padding: 24px 18px !important; }
   .hero h1 { font-size: 3.2em; }
   .features { grid-template-columns: 1fr; }
+  .subpage .markdown-body { padding: 28px 20px !important; }
+  .subpage .markdown-body > h1:first-child { font-size: 2.6em; }
+  .topbar { justify-content: center; }
 }
