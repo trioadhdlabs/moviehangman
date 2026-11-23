@@ -1,0 +1,153 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Absolute Cinema — dark cinema look, colors taken from the app icon.
+$bg: #0d0b10;
+$ink: #f2eee6;
+$muted: #b8ad9c;
+$gold: #f2c14e;
+$card: rgba(255, 244, 220, 0.05);
+$line: rgba(242, 193, 78, 0.22);
+
+html { background: $bg; }
+
+body {
+  min-height: 100vh;
+  color: $ink;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(242, 193, 78, 0.28), transparent 70%),
+    linear-gradient(180deg, #2a2118 0%, #17120f 40%, $bg 75%);
+  background-color: $bg;
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container-lg { max-width: 760px; }
+
+.markdown-body {
+  color: $ink;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.65;
+
+  // Readable card for Support / Privacy pages.
+  background: $card;
+  border: 1px solid $line;
+  border-radius: 20px;
+  padding: 32px 28px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+
+  h1, h2, h3 {
+    color: $ink;
+    border-bottom-color: $line;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+  h1 { font-size: 2.6em; }
+  h2 { font-size: 1.8em; color: $gold; }
+
+  a { color: $gold; }
+  a:hover { color: lighten($gold, 12%); }
+  strong { color: #fff; }
+  p, li { color: $ink; }
+  hr { background-color: $line; }
+  code { background: rgba(255, 255, 255, 0.08); color: $ink; }
+
+  // Site name shown at the top of sub pages: a small centered brand link.
+  > h1:not([id]) {
+    text-align: center;
+    border: 0;
+    margin-bottom: 8px;
+    font-size: 1.6em;
+    a { color: $gold; text-decoration: none; }
+  }
+}
+
+// Home page: no card, everything centered.
+body:has(.hero) .markdown-body {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0 !important;
+}
+
+.hero {
+  text-align: center;
+  padding: 24px 0 8px;
+
+  .app-icon {
+    width: 148px;
+    height: 148px;
+    border-radius: 33px;
+    box-shadow: 0 20px 60px rgba(242, 193, 78, 0.25), 0 0 0 1px $line;
+    background: none;
+  }
+  h1 {
+    margin: 28px 0 0;
+    border: 0;
+    padding: 0;
+    font-size: 4em;
+    line-height: 1;
+  }
+  .kicker {
+    margin: 6px 0 0;
+    color: $gold;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+  .lede {
+    margin: 20px auto 28px;
+    max-width: 440px;
+    color: $muted;
+    font-size: 1.2em;
+  }
+  .badge img { background: none; }
+
+  // Hangman blanks under the hero, echoing the icon.
+  .blanks {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 36px 0 0;
+    span { width: 44px; height: 6px; border-radius: 3px; background: $ink; opacity: 0.85; }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 48px 0 32px;
+
+  .feature {
+    background: $card;
+    border: 1px solid $line;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+  h3 {
+    margin: 0 0 6px;
+    border: 0;
+    color: $gold;
+    font-size: 1.5em;
+  }
+  p { margin: 0; color: $muted; font-size: 0.95em; line-height: 1.5; }
+}
+
+.footer-links {
+  text-align: center;
+  margin: 0 0 16px;
+  color: $muted;
+  a { margin: 0 10px; }
+}
+
+@media (max-width: 480px) {
+  .markdown-body { padding: 24px 18px !important; }
+  .hero h1 { font-size: 3.2em; }
+}
